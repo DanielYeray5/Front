@@ -24,7 +24,7 @@ self.addEventListener("fetch", (fetchEvent) => {
 
 if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
-        navigator.serviceWorker.register("/serviceWorker.js").then(response => console.log("serviceWorker registrado")).catch(err => console.log("serviceWorker no registrado"))
+        navigator.serviceWorker.register("/serviceWorker.js").then(res => console.log("serviceWorker registrado")).catch(err => console.log("serviceWorker no registrado"))
     })
 }
 // .then() para manejar promesas, async awayt o callbacks
