@@ -8,8 +8,7 @@ form.addEventListener('submit', async (e) => {
     const formData = new FormData(form);
     const nombres = formData.get('Nombre');
     try {
-        const response = await fetch('http://localhost:4000', {
-            // https://ejercicio-7xae.onrender.com
+        const response = await fetch('https://back-hjt4.onrender.com', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -40,7 +39,7 @@ form.addEventListener('submit', async (e) => {
 
 async function getUserList() {
     try {
-        const response = await fetch('http://localhost:4000');
+        const response = await fetch('https://back-hjt4.onrender.com');
         const data = await response.json();
         console.log(data);
         renderUserList(data);
@@ -76,7 +75,7 @@ async function updateUser() {
     const Nombre = prompt('Ingresa otro nombre:');
     if (!Nombre) return;
     try {
-        const response = await fetch('http://localhost:4000', {
+        const response = await fetch('https://back-hjt4.onrender.com', {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
@@ -109,7 +108,7 @@ async function deleteUser() {
     const ID = deleteSelect.value;
     if (!confirm('De click en aceptar para continuar')) return;
     try {
-        const response = await fetch('http://localhost:4000', {
+        const response = await fetch('https://back-hjt4.onrender.com', {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
